@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="newPrefix">
+    <file>../images/discovery.png</file>
     <file>../images/no_identicons.png</file>
     <file>../images/qidenticon_x.png</file>
     <file>../images/qidenticon.png</file>
