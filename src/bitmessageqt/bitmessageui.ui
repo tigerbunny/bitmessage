@@ -57,7 +57,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="inbox">
        <attribute name="icon">
@@ -365,6 +365,94 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
+      <widget class="QWidget" name="discovery">
+       <attribute name="icon">
+        <iconset resource="bitmessage_icons.qrc">
+         <normaloff>:/newPrefix/images/discovery.png</normaloff>:/newPrefix/images/discovery.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Discovery</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetDefaultConstraint</enum>
+          </property>
+          <item>
+           <widget class="QLineEdit" name="SearchContactLineEdit">
+            <property name="placeholderText">
+             <string>Type here the information of a contact</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonSearchContact">
+            <property name="text">
+             <string>Search</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableWidgetResults">
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
+          <property name="selectionMode">
+           <enum>QAbstractItemView::SingleSelection</enum>
+          </property>
+          <property name="selectionBehavior">
+           <enum>QAbstractItemView::SelectRows</enum>
+          </property>
+          <attribute name="horizontalHeaderStretchLastSection">
+           <bool>true</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string>First Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Last Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>User Name</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Country</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>City</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Profession</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Verified</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>BMA</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="sent">
        <attribute name="icon">
         <iconset resource="bitmessage_icons.qrc">
@@ -491,94 +579,6 @@ p, li { white-space: pre-wrap; }
             <bool>true</bool>
            </property>
           </widget>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="discovery">
-       <attribute name="icon">
-        <iconset resource="bitmessage_icons.qrc">
-         <normaloff>:/newPrefix/images/discovery.png</normaloff>:/newPrefix/images/discovery.png</iconset>
-       </attribute>
-       <attribute name="title">
-        <string>Discovery</string>
-       </attribute>
-       <layout class="QVBoxLayout" name="verticalLayout_3">
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2">
-          <property name="sizeConstraint">
-           <enum>QLayout::SetDefaultConstraint</enum>
-          </property>
-          <item>
-           <widget class="QLineEdit" name="SearchContactLineEdit">
-            <property name="placeholderText">
-             <string>Type here the information of a contact</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButtonSearch">
-            <property name="text">
-             <string>Search</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <widget class="QTableWidget" name="tableWidgetResults">
-          <property name="editTriggers">
-           <set>QAbstractItemView::NoEditTriggers</set>
-          </property>
-          <property name="selectionMode">
-           <enum>QAbstractItemView::SingleSelection</enum>
-          </property>
-          <property name="selectionBehavior">
-           <enum>QAbstractItemView::SelectRows</enum>
-          </property>
-          <attribute name="horizontalHeaderStretchLastSection">
-           <bool>true</bool>
-          </attribute>
-          <column>
-           <property name="text">
-            <string>First Name</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Last Name</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>User Name</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Country</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>City</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Profession</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Verified</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>BMA</string>
-           </property>
-          </column>
          </widget>
         </item>
        </layout>

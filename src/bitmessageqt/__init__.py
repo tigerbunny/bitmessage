@@ -209,6 +209,12 @@ class MyForm(QtGui.QMainWindow):
                                QtCore.SIGNAL(
                                    "clicked()"),
                                self.click_pushButtonLoadFromAddressBook)
+
+        QtCore.QObject.connect(self.ui.pushButtonSearchContact,
+                               QtCore.SIGNAL(
+                                   "clicked()"),
+                               self.click_pushButtonSearchContact)
+
         QtCore.QObject.connect(self.ui.pushButtonFetchNamecoinID, QtCore.SIGNAL(
             "clicked()"), self.click_pushButtonFetchNamecoinID)
         QtCore.QObject.connect(self.ui.radioButtonBlacklist, QtCore.SIGNAL(
@@ -1895,6 +1901,39 @@ class MyForm(QtGui.QMainWindow):
             time.sleep(0.1)
             self.statusBar().showMessage(_translate(
                 "MainWindow", "Right click one or more entries in your address book and select \'Send message to this address\'."))
+
+    def click_pushButtonSearchContact(self):
+        import urllib2
+        import json
+        self.profiles = []
+        search_url = 'http://findbma.com/bma_api?find='
+        searchKeyword = str(self.ui.SearchContactLineEdit.text())
+        request = urllib2.urlopen(search_url + searchKeyword, timeout=10)
+        data = json.load(request)
+        for key in data['Bma_profiles']:
+            profile = data['Bma_profiles'][key]
+            self.profiles.append(profile)
+        self.update_tableWidgetResults()
+
+    def update_tableWidgetResults(self):
+        def add_item(self, name, slot):
+            if name in profile and profile[name] != None:
+                newItem = QtGui.QTableWidgetItem(profile[name])
+                self.ui.tableWidgetResults.setItem(0, slot, newItem)
+        rows  = range(self.ui.tableWidgetResults.rowCount())
+        rows.reverse()
+        for row in rows:
+            self.ui.tableWidgetResults.removeRow(row)
+        for profile in self.profiles:
+            self.ui.tableWidgetResults.insertRow(0)
+            add_item(self, 'FirstName', 0)
+            add_item(self, 'LastName', 1)
+            add_item(self, 'Username', 2)
+            add_item(self, 'Country', 3)
+            add_item(self, 'City', 4)
+            add_item(self, 'Profession', 5)
+            add_item(self, 'Verified', 6)
+            add_item(self, 'BMA', 7)
 
     def click_pushButtonFetchNamecoinID(self):
         nc = namecoinConnection()
