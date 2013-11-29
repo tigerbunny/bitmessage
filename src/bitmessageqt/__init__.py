@@ -209,12 +209,14 @@ class MyForm(QtGui.QMainWindow):
                                QtCore.SIGNAL(
                                    "clicked()"),
                                self.click_pushButtonLoadFromAddressBook)
-
         QtCore.QObject.connect(self.ui.pushButtonSearchContact,
                                QtCore.SIGNAL(
                                    "clicked()"),
                                self.click_pushButtonSearchContact)
-
+        QtCore.QObject.connect(self.ui.SearchContactLineEdit,
+                               QtCore.SIGNAL(
+                                   "returnPressed()"),
+                               self.click_pushButtonSearchContact)
         QtCore.QObject.connect(self.ui.pushButtonFetchNamecoinID, QtCore.SIGNAL(
             "clicked()"), self.click_pushButtonFetchNamecoinID)
         QtCore.QObject.connect(self.ui.radioButtonBlacklist, QtCore.SIGNAL(
