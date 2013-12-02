@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'bitmessageui.ui'
 #
-# Created: Fri Nov 29 16:25:21 2013
+# Created: Fri Nov 29 23:19:48 2013
 #      by: PyQt4 UI code generator 4.10.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -217,6 +217,11 @@ class Ui_MainWindow(object):
         self.tableWidgetResults.setHorizontalHeaderItem(7, item)
         self.tableWidgetResults.horizontalHeader().setStretchLastSection(True)
         self.verticalLayout_3.addWidget(self.tableWidgetResults)
+        self.label_7 = QtGui.QLabel(self.discovery)
+        self.label_7.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_7.setOpenExternalLinks(True)
+        self.label_7.setObjectName(_fromUtf8("label_7"))
+        self.verticalLayout_3.addWidget(self.label_7)
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap(_fromUtf8(":/newPrefix/images/discovery.png")), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.tabWidget.addTab(self.discovery, icon3, _fromUtf8(""))
@@ -624,6 +629,7 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Verified", None))
         item = self.tableWidgetResults.horizontalHeaderItem(7)
         item.setText(_translate("MainWindow", "BMA", None))
+        self.label_7.setText(_translate("MainWindow", "<a href=\"http://findbma.com/user/register\">Add your BMA to the Central Directory</a>", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.discovery), _translate("MainWindow", "Discovery", None))
         self.sentSearchLineEdit.setPlaceholderText(_translate("MainWindow", "Search", None))
         self.sentSearchOptionCB.setItemText(0, _translate("MainWindow", "All", None))

@@ -451,6 +451,19 @@ p, li { white-space: pre-wrap; }
           </column>
          </widget>
         </item>
+        <item>
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>&lt;a href=&quot;http://findbma.com/user/register&quot;&gt;Add your BMA to the Central Directory&lt;/a&gt;</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+          <property name="openExternalLinks">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
        </layout>
       </widget>
       <widget class="QWidget" name="sent">
